@@ -49,6 +49,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'AuthController/login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['register'] = 'AuthController/register';
+$route['login'] = 'AuthController/login';
+$route['logout'] = 'AuthController/logout';
+
+// Phone Record routes
+$route['home'] = 'PageController/index';
+$route['create'] = 'PageController/create';
+$route['store'] = 'PageController/store';
+$route['edit/(:any)'] = 'PageController/edit/$1';
+$route['update/(:any)'] = 'PageController/update/$1';
+$route['delete/(:any)'] = 'PageController/destroy/$1';
+
+// User Record routes
+$route['user/home'] = 'UserController/index';
+$route['user/create'] = 'UserController/create';
+$route['user/update'] = 'UserController/update';
+$route['user/delete'] = 'UserController/destroy';
+
+// General routes
+$route['(:any)'] = 'AuthController/login';
